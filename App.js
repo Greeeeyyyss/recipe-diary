@@ -1,19 +1,78 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+import AddRecipeScreen from './screens/AddRecipeScreen';
+import DiscoverRecipeScreen from './screens/DiscoverRecipeScreen';
+import RecipeDetailScreen from './screens/RecipeDetailScreen';
+import RecipeListScreen from './screens/RecipeListScreen';
+import SplashScreen from './screens/SplashScreen';
+import {Icon} from 'react-native-elements';
 
-export default function App() {
+import {Provider} from 'react-redux';
+import store from './redux/store';
+
+const screenOptions = {
+  headerStyle: {
+    backgroundColor: 'green'
+  },
+  headerTintColor: 'white',
+  headerTintStyle: {
+    fontWeight: 'bold'
+  }
+};
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <NavigationContainer>
+          <AppStack.Navigator initialRouteName="Splash" screenOptions={{headerShown: false}}>
+            <AppStack.Screen name="Splash" component={SplashScreen}/>
+            <AppStack.Screen name="Main" component={MainTabScreen}/>
+          </AppStack.Navigator>
+        </NavigationContainer>
+      </Provider>
+    );
+  }
+}
+const AppStack = createStackNavigator();
+const MyRecipeStack = createStackNavigator();
+const DiscoverRecipeStack = createStackNavigator();
+const MainTab = createBottomTabNavigator();
+
+function MainTabScreen() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+    <MainTab.Navigator>
+      <MainTab.Screen name="My Recipes" component={MyRecipeStackScreen}/>
+      <MainTab.Screen name="Discover Recipes" component={DiscoverRecipeStackScreen}/>
+    </MainTab.Navigator>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function MyRecipeStackScreen() {
+  return (
+    <MyRecipeStack.Navigator screenOptions={screenOptions}>
+      <MyRecipeStack.Screen
+        name="RecipeList"
+        component={RecipeListScreen}
+        options={({ navigation, route }) => ({
+          headerTitle: 'My Recipes',
+          headerRight: () => (
+            <Icon name="add" color="white" onPress={() => navigation.navigate('AddRecipe')} />
+          )
+        })} />
+      <MyRecipeStack.Screen name="RecipeDetail" component={RecipeDetailScreen} options={{title: 'Recipe Detail'}}/>
+      <MyRecipeStack.Screen name="AddRecipe" component={AddRecipeScreen} options={{title: 'Add New Recipe'}}/>
+    </MyRecipeStack.Navigator>
+  )
+}
+
+function DiscoverRecipeStackScreen() {
+  return (
+    <DiscoverRecipeStack.Navigator screenOptions={screenOptions}>
+      <DiscoverRecipeStack.Screen name="DiscoverRecipes" component={DiscoverRecipeScreen}
+                                  options={{title: 'Discover Recipes'}}/>
+    </DiscoverRecipeStack.Navigator>
+  )
+}
