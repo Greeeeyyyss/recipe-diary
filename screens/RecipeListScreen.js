@@ -1,28 +1,58 @@
 import React from 'react';
-import {Text, FlatList, StyleSheet, View} from 'react-native';
-import {Icon} from 'react-native-elements';
-import {connect} from 'react-redux';
+import { FlatList, StyleSheet, View } from 'react-native';
+import { connect } from 'react-redux';
+import RecipeItem from '../components/RecipeItem';
+import EmptyState from "../components/EmptyState";
+import { toggleSaveRecipe } from "../redux/action";
 
 class RecipeListScreen extends React.Component {
 
-  renderItem = ({item}) => (
-    <View>
-      <View>
-        <Text>item.name</Text>
-        <Text>item.description</Text>
-      </View>
-      <Icon name="star" color={item.isSaved ? 'orange' : 'black'}/>
-    </View>
-  )
+  getDescription = (item) => {
+    return item.ingredients.map(ingredient => {
+      return ingredient.name
+    }).join(', ');
+  };
+
+  onViewRecipe = (item) => {
+    console.log('view recipe', item);
+    this.props.navigation.navigate('RecipeDetail', { recipe: item });
+  };
+
+  onToggleSaveRecipe = (item) => {
+    console.log('save recipe', item);
+    this.props.toggleSaveRecipe(item);
+  };
+
+
+  renderItem = ({ item }) => (
+    <RecipeItem
+      recipe={item}
+      description={this.getDescription(item)}
+      onToggleSaveRecipe={() => this.onToggleSaveRecipe(item)}
+      onViewRecipe={() => this.onViewRecipe(item)}
+    />
+  );
+
 
   render() {
     return (
-      <View>
-        <FlatList
-          renderItem={this.renderItem}
-          data={this.props.recipes}
-          keyExtractor={item => item.name}
-        />
+      <View style={styles.container}>
+        {
+          this.props.recipes && this.props.recipes.length === 0 ? (
+              <EmptyState
+                iconName="star"
+                message="Your recipes will appear here"
+                actionTitle="Add your first recipe"
+                action={() => this.props.navigation.navigate('AddRecipe')}
+              />
+            ) :
+            <FlatList
+              renderItem={this.renderItem}
+              data={this.props.recipes}
+              keyExtractor={item => item.name}
+            />
+        }
+
       </View>
     )
   }
@@ -30,12 +60,13 @@ class RecipeListScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    margin: 10
+    margin: 10,
+    flex: 1,
   }
-})
+});
 
 const mapStateToProps = state => ({
   recipes: state.recipes
-})
+});
 
-export default connect(mapStateToProps)(RecipeListScreen)
+export default connect(mapStateToProps, { toggleSaveRecipe })(RecipeListScreen)
