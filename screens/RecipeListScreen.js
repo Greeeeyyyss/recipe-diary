@@ -14,15 +14,12 @@ class RecipeListScreen extends React.Component {
   };
 
   onViewRecipe = (item) => {
-    console.log('view recipe', item);
     this.props.navigation.navigate('RecipeDetail', { recipe: item });
   };
 
   onToggleSaveRecipe = (item) => {
-    console.log('save recipe', item);
     this.props.toggleSaveRecipe(item);
   };
-
 
   renderItem = ({ item }) => (
     <RecipeItem
@@ -42,7 +39,7 @@ class RecipeListScreen extends React.Component {
               <EmptyState
                 iconName="star"
                 message="Your recipes will appear here"
-                actionTitle="Add your first recipe"
+                actionTitle="Add Recipe"
                 action={() => this.props.navigation.navigate('AddRecipe')}
               />
             ) :

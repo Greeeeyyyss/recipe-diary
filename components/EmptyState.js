@@ -1,13 +1,14 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import PropTypes from 'prop-types';
+import PrimaryButton from './PrimaryButton';
 
 const EmptyState = props => (
   <View style={styles.container}>
     <Icon name={props.iconName} color='green' size={150}/>
     <Text style={styles.message}>{props.message}</Text>
-    <Button title={props.actionTitle} color="green" onPress={props.action}/>
+    <PrimaryButton title={props.actionTitle} onPress={props.action}/>
   </View>
 );
 
@@ -15,7 +16,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
   },
   message: {
     textAlign: 'center',

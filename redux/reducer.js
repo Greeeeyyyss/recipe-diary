@@ -8,13 +8,17 @@ import {
 export const reducer = (state = { recipes: [] }, action) => {
   switch (action.type) {
     case ADD_RECIPE:
-      console.log('Add Recipe: ', action.payload);
       return { recipes: [...state.recipes, action.payload] };
     case UPDATE_RECIPE:
-      console.log('Update Recipe: ', action.payload);
-      return {};
+      return {
+        recipes: state.recipes.map(recipe => {
+          if (recipe.name === action.payload.currentRecipe.name) {
+            return action.payload.updatedRecipe;
+          }
+          return recipe;
+        })
+      };
     case TOGGLE_SAVE_RECIPE:
-      console.log('Toggle save Recipe: ', action.payload);
       return {
         recipes: state.recipes.map(recipe => {
           if (recipe.name === action.payload.name) {
@@ -27,7 +31,6 @@ export const reducer = (state = { recipes: [] }, action) => {
         })
       };
     case DELETE_RECIPE:
-      console.log('Delete Recipe: ', action.payload);
       return {
         recipes: state.recipes.filter(recipe => recipe.name !== action.payload.name)
       };

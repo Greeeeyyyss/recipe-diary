@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, FlatList, StyleSheet, View } from 'react-native';
-import { Button, Icon } from 'react-native-elements';
+import { FlatList, StyleSheet, View } from 'react-native';
+import { Button, Card, Icon, Text } from 'react-native-elements';
 import { deleteRecipe } from "../redux/action";
 import { connect } from 'react-redux';
 
@@ -11,28 +11,32 @@ class RecipeDetailScreen extends React.Component {
     this.props.navigation.navigate('RecipeList')
   };
 
+  renderIngredientItem = ({ item }) => <Text style={styles.item}>{item.name}</Text>;
+
+  renderDirectionItem = ({ item }) => <Text style={styles.item}>{item.step}</Text>;
+
   render() {
     const recipe = this.props.route.params.recipe;
     return (
-      <View>
-        <View style={styles.header}>
-          <Text>{recipe.name}</Text>
-          <Icon name="star" color={recipe.isSaved ? 'orange' : 'black'}/>
+      <Card style={styles.container}>
+        <View style={styles.ingredients}>
+          <Text h4>Ingredients</Text>
+          <FlatList
+            renderItem={this.renderIngredientItem}
+            data={recipe.ingredients}
+            keyExtractor={(item, index) => index.toString()}
+          />
         </View>
-        <View>
-          <Text>Ingredients</Text>
-          {recipe.ingredients.map(ingredient => {
-            return <Text>{ingredient.name}</Text>
-          })}
+        <View style={styles.directions}>
+          <Text h4>Directions</Text>
+          <FlatList
+            renderItem={this.renderDirectionItem}
+            data={recipe.directions}
+            keyExtractor={(item, index) => index.toString()}
+          />
         </View>
-        <View>
-          <Text>Directions</Text>
-          {recipe.directions.map(direction => {
-            return <Text>{direction.step}</Text>
-          })}
-        </View>
-        <Button title="Delete Recipe" onPress={() => this.onDeleteRecipe(recipe)}/>
-      </View>
+        <Button title="Delete Recipe" type="outline" onPress={() => this.onDeleteRecipe(recipe)}/>
+      </Card>
     )
   }
 }
@@ -41,10 +45,15 @@ const styles = StyleSheet.create({
   container: {
     margin: 10
   },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignContent: 'center'
+  ingredients: {
+    marginBottom: 30
+  },
+  directions: {
+    marginBottom: 30
+  },
+  item: {
+    fontSize: 16,
+    marginTop: 5
   }
 });
 
