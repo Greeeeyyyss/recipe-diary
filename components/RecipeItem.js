@@ -7,17 +7,19 @@ const RecipeItem = props => (
   <Card>
     <View style={styles.container}>
       {
-        props.recipe.thumbnail && <Image style={styles.image} source={props.recipe.thumbnail}/>
+        props.thumbnail !== undefined &&
+          <Image style={styles.image} source={props.thumbnail ? { uri: props.thumbnail } : null}/>
       }
       <TouchableOpacity style={styles.details} onPress={props.onViewRecipe}>
-        <Text style={styles.name} numberOfLines={1} ellipsizeMode='tail'>{props.recipe.name}</Text>
+        <Text style={styles.name} numberOfLines={1} ellipsizeMode='tail'>{props.name}</Text>
         <Text numberOfLines={1} ellipsizeMode='tail'>{props.description}</Text>
       </TouchableOpacity>
-      <Icon name="star"
-            color={props.recipe.isSaved ? 'orange' : 'gray'}
-            style={styles.action}
-            onPress={props.onToggleSaveRecipe}
-      />
+      {
+        !props.href && <Icon name="star"
+                                     color={props.isSaved ? 'orange' : 'gray'}
+                                     style={styles.action}
+                                     onPress={props.onToggleSaveRecipe} />
+      }
     </View>
   </Card>
 );
@@ -32,7 +34,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column'
   },
   image: {
-    flex: 1
+    flex: 0.4,
+    height: 50,
+    width: 50,
+    backgroundColor: '#ebebeb',
+    marginEnd: 10
   },
   action: {
     flex: 1
@@ -44,8 +50,11 @@ const styles = StyleSheet.create({
 });
 
 RecipeItem.propTypes = {
-  recipe: PropTypes.object,
+  name: PropTypes.string,
+  isSaved: PropTypes.bool,
+  thumbnail: PropTypes.string,
   description: PropTypes.string,
+  href: PropTypes.string,
   onViewRecipe: PropTypes.func,
   onToggleSaveRecipe: PropTypes.func
 };

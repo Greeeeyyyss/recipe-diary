@@ -8,7 +8,9 @@ const EmptyState = props => (
   <View style={styles.container}>
     <Icon name={props.iconName} color='green' size={150}/>
     <Text style={styles.message}>{props.message}</Text>
-    <PrimaryButton title={props.actionTitle} onPress={props.action}/>
+    {
+      props.actionTitle && <PrimaryButton title={props.actionTitle} onPress={props.action}/>
+    }
   </View>
 );
 

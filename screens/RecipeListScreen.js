@@ -23,7 +23,8 @@ class RecipeListScreen extends React.Component {
 
   renderItem = ({ item }) => (
     <RecipeItem
-      recipe={item}
+      name={item.name}
+      isSaved={item.isSaved}
       description={this.getDescription(item)}
       onToggleSaveRecipe={() => this.onToggleSaveRecipe(item)}
       onViewRecipe={() => this.onViewRecipe(item)}
