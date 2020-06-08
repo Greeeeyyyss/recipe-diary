@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import {Icon} from 'react-native-elements';
+import { View, StyleSheet } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 export default class SplashScreen extends React.Component {
 
@@ -13,7 +13,7 @@ export default class SplashScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Icon name="star" color='white' size={200}/>
+        <Icon name="book" type='font-awesome' color='white' size={150}/>
       </View>
     )
   }

@@ -1,6 +1,6 @@
 import React from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
-import { Button, Card, Icon, Text } from 'react-native-elements';
+import { FlatList, SectionList, StyleSheet, View } from 'react-native';
+import { Button, Card, Text } from 'react-native-elements';
 import { deleteRecipe } from "../redux/action";
 import { connect } from 'react-redux';
 

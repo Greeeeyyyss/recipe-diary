@@ -1,11 +1,16 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
+import { CheckBox } from 'react-native-elements';
 import { connect } from 'react-redux';
 import RecipeItem from '../components/RecipeItem';
 import EmptyState from "../components/EmptyState";
 import { toggleSaveRecipe } from "../redux/action";
 
 class RecipeListScreen extends React.Component {
+
+  state = {
+    isFiltered: false
+  };
 
   getDescription = (item) => {
     return item.ingredients.map(ingredient => {
@@ -21,6 +26,12 @@ class RecipeListScreen extends React.Component {
     this.props.toggleSaveRecipe(item);
   };
 
+  onToggleFilter = () => {
+    this.setState(prevState => ({
+      isFiltered: !prevState.isFiltered
+    }));
+  };
+
   renderItem = ({ item }) => (
     <RecipeItem
       name={item.name}
@@ -31,6 +42,9 @@ class RecipeListScreen extends React.Component {
     />
   );
 
+  getSavedRecipes = () => {
+    return this.props.recipes.filter(recipe => recipe.isSaved === true);
+  };
 
   render() {
     return (
@@ -44,11 +58,18 @@ class RecipeListScreen extends React.Component {
                 action={() => this.props.navigation.navigate('AddRecipe')}
               />
             ) :
-            <FlatList
-              renderItem={this.renderItem}
-              data={this.props.recipes}
-              keyExtractor={item => item.name}
-            />
+            <View>
+              <CheckBox
+                title="Filter saved recipes"
+                checked={this.state.isFiltered}
+                onPress={() => this.onToggleFilter()}
+              />
+              <FlatList
+                renderItem={this.renderItem}
+                data={this.state.isFiltered ? this.getSavedRecipes() : this.props.recipes}
+                keyExtractor={item => item.name}
+              />
+            </View>
         }
 
       </View>

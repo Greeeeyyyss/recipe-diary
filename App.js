@@ -8,6 +8,7 @@ import RecipeDetailScreen from './screens/RecipeDetailScreen';
 import RecipeListScreen from './screens/RecipeListScreen';
 import SplashScreen from './screens/SplashScreen';
 import { Icon } from 'react-native-elements';
+import { YellowBox } from 'react-native';
 
 import { Provider } from 'react-redux';
 import store from './redux/store';
@@ -24,6 +25,10 @@ const screenOptions = {
 
 export default class App extends React.Component {
   render() {
+    YellowBox.ignoreWarnings([
+      'VirtualizedLists should never be nested',
+    ]);
+
     return (
       <Provider store={store}>
         <NavigationContainer>

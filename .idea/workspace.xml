@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6de50309-6ba6-4eb5-b0a6-83ad6237e2c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SearchBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/EmptyState.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/EmptyState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/RecipeItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/RecipeItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/AddRecipeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/AddRecipeScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/DiscoverRecipeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/DiscoverRecipeScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/RecipeDetailScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/RecipeDetailScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/RecipeListScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/RecipeListScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/SplashScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/SplashScreen.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,34 +20,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="72" column="6" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screens/DiscoverRecipeScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1438">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state relative-caret-position="1736">
+              <caret line="104" column="11" lean-forward="true" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="11" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -53,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screens/RecipeDetailScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+            <state relative-caret-position="841">
+              <caret line="51" column="20" lean-forward="true" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -86,14 +67,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screens/AddRecipeScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+            <state relative-caret-position="424">
+              <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="66" column="27" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/screens/SplashScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -113,8 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screens/RecipeListScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+            <state relative-caret-position="-299">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -143,6 +145,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>header</find>
+      <find>this.setState(prevState</find>
+      <find>isFiltered</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,18 +165,19 @@
         <option value="$PROJECT_DIR$/screens/SplashScreen" />
         <option value="$PROJECT_DIR$/redux/store.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/screens/SplashScreen.js" />
         <option value="$PROJECT_DIR$/redux/action.js" />
         <option value="$PROJECT_DIR$/components/PrimaryButton.js" />
         <option value="$PROJECT_DIR$/redux/reducer.js" />
-        <option value="$PROJECT_DIR$/App.js" />
-        <option value="$PROJECT_DIR$/screens/RecipeDetailScreen.js" />
-        <option value="$PROJECT_DIR$/screens/AddRecipeScreen.js" />
         <option value="$PROJECT_DIR$/api.js" />
         <option value="$PROJECT_DIR$/components/RecipeItem.js" />
         <option value="$PROJECT_DIR$/components/EmptyState.js" />
-        <option value="$PROJECT_DIR$/screens/RecipeListScreen.js" />
+        <option value="$PROJECT_DIR$/components/SearchBar.js" />
         <option value="$PROJECT_DIR$/screens/DiscoverRecipeScreen.js" />
+        <option value="$PROJECT_DIR$/screens/RecipeListScreen.js" />
+        <option value="$PROJECT_DIR$/screens/RecipeDetailScreen.js" />
+        <option value="$PROJECT_DIR$/screens/AddRecipeScreen.js" />
+        <option value="$PROJECT_DIR$/App.js" />
+        <option value="$PROJECT_DIR$/screens/SplashScreen.js" />
       </list>
     </option>
   </component>
@@ -368,8 +373,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -396,12 +399,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1590400331549" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591624050326" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -471,7 +476,8 @@
       <workItem from="1590887651076" duration="6682000" />
       <workItem from="1591181231319" duration="480000" />
       <workItem from="1591447104839" duration="51000" />
-      <workItem from="1591448044727" duration="286000" />
+      <workItem from="1591448044727" duration="3254000" />
+      <workItem from="1591617924635" duration="5277000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add recipe list screen">
       <created>1590307229248</created>
@@ -487,27 +493,34 @@
       <option name="project" value="LOCAL" />
       <updated>1590394406581</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: browse recipe">
+      <created>1591448502227</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591448502227</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42050000" />
+    <option name="totallyTimeSpent" value="50295000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="23" width="1325" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6394904" visible="true" weight="0.21356197" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.63826084" visible="true" weight="0.21356197" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="npm" order="7" sideWeight="0.36050954" side_tool="true" visible="true" weight="0.21356197" />
+      <window_info active="true" id="npm" order="7" sideWeight="0.36173913" side_tool="true" visible="true" weight="0.21356197" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26751593" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26751593" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -515,7 +528,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.26751593" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.23439491" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -537,7 +550,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add recipe list screen" />
     <MESSAGE value="feat: update add recipe and recipe detail screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update add recipe and recipe detail screen" />
+    <MESSAGE value="feat: browse recipe" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: browse recipe" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/screens/AddRecipeScreen.js</url>
+          <line>166</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/screens/SplashScreen" />
@@ -574,17 +600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/SplashScreen.js">
+    <entry file="file://$PROJECT_DIR$/components/SearchBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="72" column="6" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -595,16 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/RecipeDetailScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -638,16 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/RecipeListScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/redux/reducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -657,8 +656,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/DiscoverRecipeScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1438">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        <state relative-caret-position="1736">
+          <caret line="104" column="11" lean-forward="true" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/RecipeListScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/RecipeDetailScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="51" column="20" lean-forward="true" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -667,11 +686,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/AddRecipeScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        <state relative-caret-position="424">
+          <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="66" column="27" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/SplashScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>

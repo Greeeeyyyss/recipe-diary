@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, FlatList, ScrollView, StyleSheet, View } from 'react-native';
+import { TextInput, FlatList, ScrollView, StyleSheet, View, YellowBox } from 'react-native';
 import { Card, Icon, Text } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { addRecipe, updateRecipe } from "../redux/action";
@@ -22,16 +22,26 @@ class AddDetailScreen extends React.Component {
   }
 
   onSaveRecipe = () => {
-    if (this.recipe) {
-      this.props.updateRecipe({
-        currentRecipe: this.recipe,
-        updatedRecipe: this.state
-      });
-      this.props.navigation.navigate('RecipeDetail', { recipe: this.state });
-    } else {
-      this.props.addRecipe(this.state);
-      this.props.navigation.navigate('RecipeList');
-    }
+    this.setState(prevState => ({
+      name: prevState.name.trim(),
+      ingredients: prevState.ingredients.filter(ingredient => ingredient.name.trim() !== ''),
+      directions: prevState.directions.filter(directions => directions.step.trim() !== '')
+    }), () => {
+      if (this.state.name.trim() === '' || this.state.ingredients.length === 0) {
+        alert('Recipe name and ingredients are required');
+      } else {
+        if (this.recipe) {
+          this.props.updateRecipe({
+            currentRecipe: this.recipe,
+            updatedRecipe: this.state
+          });
+          this.props.navigation.navigate('RecipeDetail', { recipe: this.state });
+        } else {
+          this.props.addRecipe(this.state);
+          this.props.navigation.navigate('RecipeList');
+        }
+      }
+    });
   };
 
   onNameChange = (name) => {

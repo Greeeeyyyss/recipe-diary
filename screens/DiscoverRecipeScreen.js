@@ -1,9 +1,9 @@
 import React from 'react';
-import { Alert, Linking, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, View } from 'react-native';
-import { Icon } from 'react-native-elements';
+import { Alert, Linking, Text, TouchableOpacity, FlatList, StyleSheet, View } from 'react-native';
 import RecipeItem from '../components/RecipeItem';
 import { searchRecipe } from "../api";
 import EmptyState from '../components/EmptyState';
+import SearchBar from "../components/SearchBar";
 
 const LIMIT = 10;
 
@@ -100,35 +100,9 @@ export default class DiscoverRecipeScreen extends React.Component {
   }
 }
 
-const SearchBar = props => (
-  <View style={styles.searchBar}>
-    <TextInput
-      style={styles.searchBox}
-      value={props.searchKey}
-      placeholder="Search here..."
-      onChangeText={(text) => props.onSearchChange(text)}/>
-    <Icon name="search" color="gray" onPress={props.onTapSearch}/>
-  </View>
-);
-
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  },
-  searchBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignContent: 'center',
-    alignItems: 'center',
-    margin: 20
-  },
-  searchBox: {
-    flex: 0.99,
-    height: 45,
-    padding: 10,
-    borderRadius: 5,
-    borderWidth: 2,
-    borderColor: 'green'
   },
   searchList: {
     flex: 0.90,
